@@ -16,14 +16,14 @@ Funcionalidade: Navega pelo site Auditeste
     E acesso o chatbot
     Entao visualizo o rodape do site
 
-#  @quemsomos
-#  Cenario: Deve mostrar a pagina quem somos
-#    Dado que estou na pagina quem somos
-#    Quando eu navego pela pagina quem somos
-#    E visualizo sobre a auditeste
-#    E visualizo os tipos de servicos
-#    Entao visualizo as cases da auditeste quem somos
-#
+  @quemsomos
+  Cenario: Deve mostrar a pagina quem somos
+    Dado que estou na pagina quem somos
+    Quando eu navego pela pagina quem somos
+    E visualizo sobre a auditeste
+    E visualizo os tipos de servicos
+    Entao visualizo as cases da auditeste quem somos
+
 #  @servicos
 #  Cenario: Deve mostrar a pagina servicos
 #    Dado que estou na pagina servicos
