@@ -124,7 +124,7 @@ public class AcessaPaginaInicialSteps{
     @Quando("acesso o chatbot")
     public void acesso_o_chatbot() {
         homePage.clicarBotaoIniciarChatBot();
-        homePage.clicarBotaoFechargiChatBot();
+        homePage.clicarBotaoFecharChatBot();
     }
 
     @Entao("visualizo o rodape do site")
