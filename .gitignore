@@ -1,3 +1,20 @@
+**/bin
+**/.mvn
+**/target/
+**/.idea
+**/*.iml
+**/nbactions.xml
+**/nb-configuration.xml
+**/context.xml
+**/.classpath
+**/.project
+**/.settings
+**/.factorypath
+**/*.db
+**/*.log
+**/.pmd
+/.pmdruleset.xml
+
 # Compiled class file
 *.class
 
@@ -9,6 +26,9 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+#screenshots
+*/screenshots/*
 
 # Package Files #
 *.jar
