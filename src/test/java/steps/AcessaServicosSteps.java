@@ -239,7 +239,7 @@ public class AcessaServicosSteps {
         servicos.clicarBotaoMenuHamburger();
         servicos.clicarMenuItemServicos();
         servicos.clicarMenuBotaoMenuFabricaDeTestes();
-//        esperarAteQueElementoSejaExibido();
+        esperarAteQueElementoSejaExibido();
         assertEquals(servicos.verificarSeEstaEmServicos().toUpperCase(), ("//FÁBRICA DE TESTES"));
 
         assertEquals(servicos.obterTituloTestesFabricaTestes(), ("LOCALIZAÇÃO"));
