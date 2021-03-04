@@ -11,7 +11,7 @@ public class QuemSomos {
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
     private By botaoMenuQuemSomos = By.xpath("//*[@id=\"menu-menu-topo-1\"]/li[2]/a");
 
-    private By tituloPagina = By.xpath("//*[@id=\"TITULO-SITE\"]/div[1]/div/div/div/h1");
+    public By tituloPagina = By.xpath("//*[@id=\"TITULO-SITE\"]/div[1]/div/div/div/h1");
 
     private By tituloBugMilenio = By.cssSelector("div:nth-child(3) > div > div.wpb_column.vc_column_container.vc_col-sm-6 > div > div > h2:nth-child(1)");
     private By texto1BugMilenio = By.cssSelector("div:nth-child(3) > div > div.wpb_column.vc_column_container.vc_col-sm-6 > div > div > div:nth-child(2) > div > p:nth-child(1)");

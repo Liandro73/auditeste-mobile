@@ -24,19 +24,19 @@ Funcionalidade: Navega pelo site Auditeste
     E visualizo os tipos de servicos
     Entao visualizo as cases da auditeste quem somos
 
-#  @servicos
-#  Cenario: Deve mostrar a pagina servicos
-#    Dado que estou na pagina servicos
-#    Quando eu navego pela pagina servicos
-#    E visualizo sobre a metodologia dos testes
-#    E visualizo as cases da auditeste servicos
-#    E visualizo a pagina testes funcionais e nao funcionais
-#    E visualizo a pagina testes manuais
-#    E visualizo a pagina testes mobile
-#    E visualizo a pagina fabrica de testes
-#    E visualizo a pagina consultoria
-#    E visualizo a pagina crowdsourced auditeste
-#    E visualizo a pagina alocacao de profissionais
+  @servicos
+  Cenario: Deve mostrar a pagina servicos
+    Dado que estou na pagina servicos
+    Quando eu navego pela pagina servicos
+    E visualizo sobre a metodologia dos testes
+    E visualizo as cases da auditeste servicos
+    E visualizo a pagina testes funcionais e nao funcionais
+    E visualizo a pagina testes manuais
+    E visualizo a pagina testes mobile
+    E visualizo a pagina fabrica de testes
+    E visualizo a pagina consultoria
+    E visualizo a pagina crowdsourced auditeste
+    E visualizo a pagina alocacao de profissionais
 #    Entao visualizo a pagina automacao de processos
 #
 #  @casesdesucesso

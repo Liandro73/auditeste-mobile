@@ -1,14 +1,17 @@
 package steps;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PaginaInicial;
 import pages.QuemSomos;
 import util.Screenshot;
@@ -35,6 +38,11 @@ public class AcessaQuemSomosSteps {
 
         driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    }
+
+    @After
+    public static void finalizar() {
+        driver.quit();
     }
 
     private QuemSomos quemSomos = new QuemSomos(driver);
@@ -125,8 +133,6 @@ public class AcessaQuemSomosSteps {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        driver.quit();
     }
 
 }
