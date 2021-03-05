@@ -1,60 +1,40 @@
 package steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import common.Base;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PaginaInicial;
 import pages.QuemSomos;
 import util.Screenshot;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AcessaQuemSomosSteps {
+public class AcessaQuemSomosSteps extends Base {
 
-    private static WebDriver driver;
+    private Base base;
+    private QuemSomos quemSomos;
+    private PaginaInicial homePage;
+    private Screenshot screenshot;
 
-    static DesiredCapabilities capabilities = new DesiredCapabilities();
-
-    @Before
-    public static void inicializar() throws MalformedURLException {
-        capabilities.setCapability("deviceName", "Emulator");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-        capabilities.setCapability(CapabilityType.VERSION, "10.0");
-
-        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    public AcessaQuemSomosSteps(Base base) {
+        this.base = base;
+        quemSomos = new QuemSomos(this.base);
+        homePage = new PaginaInicial(this.base);
+        screenshot = new Screenshot(this.base);
     }
-
-    @After
-    public static void finalizar() {
-        driver.quit();
-    }
-
-    private QuemSomos quemSomos = new QuemSomos(driver);
-    private PaginaInicial homePage = new PaginaInicial(driver);
-    private Screenshot screenshot = new Screenshot(driver);
 
     @Dado("que estou na pagina quem somos")
     public void que_estou_na_pagina_quem_somos() {
-        driver.get("https://auditeste.com.br/");
-        homePage.visualizarPopupHomeOffice();
-        homePage.clicarBotaoFecharPopupHomeOffice();
+        if (homePage.visualizarPopupHomeOffice() == true) {
+            assertEquals(homePage.visualizarPopupHomeOffice(), true);
+            homePage.clicarBotaoFecharPopupHomeOffice();
+        }
         quemSomos.clicarBotaoMenuHamburger();
+        base.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         quemSomos.clicarMenuItemQuemSomos();
         assertEquals(quemSomos.verificarSeEstaNaPaginaQuemSomos(), ("//QUEM SOMOS"));
         try {

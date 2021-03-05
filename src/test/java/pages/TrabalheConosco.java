@@ -1,11 +1,11 @@
 package pages;
 
+import common.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class TrabalheConosco {
+public class TrabalheConosco extends Base {
 
-    private WebDriver driver;
+    private Base base;
 
     //Itens Menu Hamburger
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
@@ -35,104 +35,104 @@ public class TrabalheConosco {
     private By textoTiposDeArquivosAceitosTrabalheConosco = By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[3]/div/div/div[2]/div[2]/div[10]/form/div[6]/div/div[1]/div[2]/div/div/div/div/div[1]");
     private By botaoEnviarFormularioTrabalheConosco = By.xpath("//*[@id=\"field_container\"]/div/div/button");
 
-    public TrabalheConosco(WebDriver driver) {
-        this.driver = driver;
+    public TrabalheConosco(Base base) {
+        this.base = base;
     }
 
     public void clicarBotaoMenuHamburger() {
-        driver.findElement(botaoMenu).click();
+        base.driver.findElement(botaoMenu).click();
     }
 
     public void clicarBotaoMenuTrabalheConosco() {
-        driver.findElement(botaoMenuTrabalheConosco).click();
+        base.driver.findElement(botaoMenuTrabalheConosco).click();
     }
 
     public String verificarSeEstaNaPaginaTrabalheConosco() {
-        return driver.findElement(tituloPaginaTrabalheConosco).getText();
+        return base.driver.findElement(tituloPaginaTrabalheConosco).getText();
     }
 
     public String obterTextoPaginaTrabalheConosco() {
-        return driver.findElement(textoPaginaTrabalheConosco).getText();
+        return base.driver.findElement(textoPaginaTrabalheConosco).getText();
     }
 
     public String obterTituloCampoNomeTrabalheConosco() {
-        return driver.findElement(tituloCampoNomeTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoNomeTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoNomeTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoNomeTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoNomeTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoEmailTrabalheConosco() {
-        return driver.findElement(tituloCampoEmailTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoEmailTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoEmailTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoEmailTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoEmailTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoTelefoneTrabalheConosco() {
-        return driver.findElement(tituloCampoTelefoneTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoTelefoneTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoTelefoneTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoTelefoneTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoTelefoneTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoEnderecoTrabalheConosco() {
-        return driver.findElement(tituloCampoEnderecoTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoEnderecoTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoEnderecoTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoEnderecoTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoEnderecoTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoCidadeTrabalheConosco() {
-        return driver.findElement(tituloCidadeTrabalheConosco).getText();
+        return base.driver.findElement(tituloCidadeTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoCidadeTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoCidadeTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoCidadeTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoObjetivoProfissionalTrabalheConosco() {
-        return driver.findElement(tituloCampoObjetivoProfissionalTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoObjetivoProfissionalTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoObjetivoProfissionalTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoObjetivoProfissionalTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoObjetivoProfissionalTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoAreaAtuacaoTrabalheConosco() {
-        return driver.findElement(tituloCampoAreaAtuacaoTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoAreaAtuacaoTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoAreaAtuacaoTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoAreaAtuacaoTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoAreaAtuacaoTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoMensagemTrabalheConosco() {
-        return driver.findElement(tituloCampoMensagemTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoMensagemTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoMensagemTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoMensagemTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoMensagemTrabalheConosco).isDisplayed();
     }
 
     public String obterTituloCampoAnexarTrabalheConosco() {
-        return driver.findElement(tituloCampoAnexarTrabalheConosco).getText();
+        return base.driver.findElement(tituloCampoAnexarTrabalheConosco).getText();
     }
 
     public boolean verificarSeCampoAnexarTrabalheConoscoEstaVisivel() {
-        return driver.findElement(campoAnexarTrabalheConosco).isDisplayed();
+        return base.driver.findElement(campoAnexarTrabalheConosco).isDisplayed();
     }
 
     public String obterTextoTiposDeArquivosAceitosTrabalheConosco() {
-        return driver.findElement(textoTiposDeArquivosAceitosTrabalheConosco).getText();
+        return base.driver.findElement(textoTiposDeArquivosAceitosTrabalheConosco).getText();
     }
 
     public boolean verificarSeBotaoEnviarFormularioTrabalheConosco() {
-        return driver.findElement(botaoEnviarFormularioTrabalheConosco).isDisplayed();
+        return base.driver.findElement(botaoEnviarFormularioTrabalheConosco).isDisplayed();
     }
 
 }

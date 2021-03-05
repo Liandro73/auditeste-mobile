@@ -1,10 +1,13 @@
 package pages;
 
-import org.openqa.selenium.*;
+import common.Base;
+import org.openqa.selenium.By;
 
-public class Servicos {
+import java.util.concurrent.TimeUnit;
 
-    private WebDriver driver;
+public class Servicos extends Base {
+
+    private Base base;
 
     //Itens Menu Hamburger
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
@@ -20,7 +23,7 @@ public class Servicos {
     private By botaoMenuTestesAutomacaoDeProcessos = By.xpath("//*[@id=\"menu-menu-topo-1\"]/li[3]/ul/li[9]/a");
 
     public By tituloPagina = By.xpath("//*[@id=\"wrapper\"]/div[1]/div[1]/div/div/div/h1");
-    public By tituloPaginaAutomacaoDeProcessos = By.cssSelector("//h1[contains(@class, 'vc_custom_heading titulo_site')]");
+    public By tituloPaginaAutomacaoDeProcessos = By.xpath("//h1[contains(@class, 'vc_custom_heading titulo_site')]");
 
     private By textoTestesAutomatizados = By.xpath("//*[@id=\"wrapper\"]/div[2]/div/div/div/div/div[2]/div/p");
     private By tituloHistoricoTestes = By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div/div/div/h2/b");
@@ -161,480 +164,481 @@ public class Servicos {
     private By segundoTextoAutomacaoProcessos = By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/p[2]");
     private By terceiroTextoAutomacaoProcessos = By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/p[3]");
 
-    public Servicos(WebDriver driver) {
-        this.driver = driver;
+    public Servicos(Base base) {
+        this.base = base;
     }
 
     public void clicarBotaoMenuHamburger() {
-        driver.findElement(botaoMenu).click();
+        base.driver.findElement(botaoMenu).click();
     }
 
     public void clicarMenuItemServicos() {
-        driver.findElement(botaoMenuServicos).click();
+        base.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        base.driver.findElement(botaoMenuServicos).click();
     }
 
     public void clicarMenuBotaoMenuTestesAutomatizados() {
-        driver.findElement(botaoMenuTestesAutomatizados).click();
+        base.driver.findElement(botaoMenuTestesAutomatizados).click();
     }
 
     public void clicarMenuBotaoMenuTestesFuncionaisNaoFuncionais() {
-        driver.findElement(botaoMenuTestesFuncionaisNaoFuncionais).click();
+        base.driver.findElement(botaoMenuTestesFuncionaisNaoFuncionais).click();
     }
 
     public void clicarMenuBotaoMenuTestesManuais() {
-        driver.findElement(botaoMenuTestesManuais).click();
+        base.driver.findElement(botaoMenuTestesManuais).click();
     }
 
     public void clicarMenuBotaoMenuTestesMobile() {
-        driver.findElement(botaoMenuTestesMobile).click();
+        base.driver.findElement(botaoMenuTestesMobile).click();
     }
 
     public void clicarMenuBotaoMenuFabricaDeTestes() {
-        driver.findElement(botaoMenuTestesFabricaDeTestes).click();
+        base.driver.findElement(botaoMenuTestesFabricaDeTestes).click();
     }
 
     public void clicarMenuBotaoMenuTestesConsultoria() {
-        driver.findElement(botaoMenuTestesConsultoria).click();
+        base.driver.findElement(botaoMenuTestesConsultoria).click();
     }
 
     public void clicarMenuBotaoMenuTestesCrowdsourced() {
-        driver.findElement(botaoMenuTestesCrowdsourced).click();
+        base.driver.findElement(botaoMenuTestesCrowdsourced).click();
     }
 
     public void clicarMenuBotaoMenuTestesAlocacaoDeProfissionais() {
-        driver.findElement(botaoMenuTestesAlocacaoDeProfissionais).click();
+        base.driver.findElement(botaoMenuTestesAlocacaoDeProfissionais).click();
     }
 
     public void clicarMenuBotaoMenuTestesAutomacaoDeProcessos() {
-        driver.findElement(botaoMenuTestesAutomacaoDeProcessos).click();
+        base.driver.findElement(botaoMenuTestesAutomacaoDeProcessos).click();
     }
 
     public String verificarSeEstaEmServicos() {
-        return driver.findElement(tituloPagina).getText();
+        return base.driver.findElement(tituloPagina).getText();
     }
 
     public String verificarSeEstaEmAutomacaoDeProcessos() {
-        return driver.findElement(tituloPaginaAutomacaoDeProcessos).getText();
+        return base.driver.findElement(tituloPaginaAutomacaoDeProcessos).getText();
     }
 
     public String obterTextoTestesAutomatizados() {
-        return driver.findElement(textoTestesAutomatizados).getText();
+        return base.driver.findElement(textoTestesAutomatizados).getText();
     }
 
     public String obterTituloHistoricoTestes() {
-        return driver.findElement(tituloHistoricoTestes).getText();
+        return base.driver.findElement(tituloHistoricoTestes).getText();
     }
 
     public String obterHistoricoTestes() {
-        return driver.findElement(textoHistoricoTestes).getText();
+        return base.driver.findElement(textoHistoricoTestes).getText();
     }
 
     public boolean verificarImgHistoricoTestes() {
-        return driver.findElement(imgHistoricoTestes).isDisplayed();
+        return base.driver.findElement(imgHistoricoTestes).isDisplayed();
     }
 
     public String obterTituloPrincipaisBeneficios() {
-        return driver.findElement(tituloPrincipaisBeneficios).getText();
+        return base.driver.findElement(tituloPrincipaisBeneficios).getText();
     }
 
     public String obterTextoPrimeiroBeneficio() {
-        return driver.findElement(textoPrimeiroBeneficio).getText();
+        return base.driver.findElement(textoPrimeiroBeneficio).getText();
     }
 
     public String obterTextoSegundoBeneficio() {
-        return driver.findElement(textoSegundoBeneficio).getText();
+        return base.driver.findElement(textoSegundoBeneficio).getText();
     }
 
     public String obterTextoTerceiroBeneficio() {
-        return driver.findElement(textoTerceiroBeneficio).getText();
+        return base.driver.findElement(textoTerceiroBeneficio).getText();
     }
 
     public String obterTextoQuartoBeneficio() {
-        return driver.findElement(textoQuartoBeneficio).getText();
+        return base.driver.findElement(textoQuartoBeneficio).getText();
     }
 
     public String obterTextoQuintoBeneficio() {
-        return driver.findElement(textoQuintoBeneficio).getText();
+        return base.driver.findElement(textoQuintoBeneficio).getText();
     }
 
     public String obterTextoSextoBeneficio() {
-        return driver.findElement(textoSextoBeneficio).getText();
+        return base.driver.findElement(textoSextoBeneficio).getText();
     }
 
     public String obterTextoSetimoBeneficio() {
-        return driver.findElement(textoSetimoBeneficio).getText();
+        return base.driver.findElement(textoSetimoBeneficio).getText();
     }
 
     public String obterTextoOitavoBeneficio() {
-        return driver.findElement(textoOitavoBeneficio).getText();
+        return base.driver.findElement(textoOitavoBeneficio).getText();
     }
 
     public String obterTextoNonoBeneficio() {
-        return driver.findElement(textoNonoBeneficio).getText();
+        return base.driver.findElement(textoNonoBeneficio).getText();
     }
 
     public boolean verificarImgTiposDeTeste() {
-        return driver.findElement(imgTiposDeTeste).isDisplayed();
+        return base.driver.findElement(imgTiposDeTeste).isDisplayed();
     }
 
     public String obterTituloTiposDeTeste() {
-        return driver.findElement(tituloTiposDeTeste).getText();
+        return base.driver.findElement(tituloTiposDeTeste).getText();
     }
 
     public String obterTextoTipoDeTesteRegressivoEProgressivo() {
-        return driver.findElement(tipoDeTesteRegressivoEProgressivo).getText();
+        return base.driver.findElement(tipoDeTesteRegressivoEProgressivo).getText();
     }
 
     public String obterTextoTipoDeTesteFuncionais() {
-        return driver.findElement(tipoDeTesteFuncionais).getText();
+        return base.driver.findElement(tipoDeTesteFuncionais).getText();
     }
 
     public String obterTextoTipoDeTesteCarga() {
-        return driver.findElement(tipoDeTesteCarga).getText();
+        return base.driver.findElement(tipoDeTesteCarga).getText();
     }
 
     public String obterTextoTipoDeTesteMonitoracao() {
-        return driver.findElement(tipoDeTesteMonitoracao).getText();
+        return base.driver.findElement(tipoDeTesteMonitoracao).getText();
     }
 
     public boolean verificarImgFerramentasUtilizadas() {
-        return driver.findElement(imgFerramentasUtilizadas).isDisplayed();
+        return base.driver.findElement(imgFerramentasUtilizadas).isDisplayed();
     }
 
     public String obterTituloFerramentasUtilizadas() {
-        return driver.findElement(tituloFerramentasUtilizadas).getText();
+        return base.driver.findElement(tituloFerramentasUtilizadas).getText();
     }
 
     public String obterTextoFerramentaQuickTest() {
-        return driver.findElement(textoFerramentaQuickTest).getText();
+        return base.driver.findElement(textoFerramentaQuickTest).getText();
     }
 
     public String obterTextoFerramentaTestComplete() {
-        return driver.findElement(textoFerramentaTestComplete).getText();
+        return base.driver.findElement(textoFerramentaTestComplete).getText();
     }
 
     public String obterTextoFerramentaSilk4net() {
-        return driver.findElement(textoFerramentaSilk4net).getText();
+        return base.driver.findElement(textoFerramentaSilk4net).getText();
     }
 
     public String obterTextoFerramentaRational() {
-        return driver.findElement(textoFerramentaRational).getText();
+        return base.driver.findElement(textoFerramentaRational).getText();
     }
 
     public String obterTextoFerramentaJmeter() {
-        return driver.findElement(textoFerramentaJmeter).getText();
+        return base.driver.findElement(textoFerramentaJmeter).getText();
     }
 
     public String obterTextoFerramentaHPAlm() {
-        return driver.findElement(textoFerramentaHPAlm).getText();
+        return base.driver.findElement(textoFerramentaHPAlm).getText();
     }
 
     public String obterTextoFerramentaHOUtf() {
-        return driver.findElement(textoFerramentaHOUtf).getText();
+        return base.driver.findElement(textoFerramentaHOUtf).getText();
     }
 
     public String obterTextoFerramentaSelenium() {
-        return driver.findElement(textoFerramentaSelenium).getText();
+        return base.driver.findElement(textoFerramentaSelenium).getText();
     }
 
     public String obterTextoFerramentaTestLink() {
-        return driver.findElement(textoFerramentaTestLink).getText();
+        return base.driver.findElement(textoFerramentaTestLink).getText();
     }
 
     public String obterTextoFerramentaMantisRuby() {
-        return driver.findElement(textoFerramentaMantisRuby).getText();
+        return base.driver.findElement(textoFerramentaMantisRuby).getText();
     }
 
     public String obterTextoFerramentaMicrofocus() {
-        return driver.findElement(textoFerramentaMicrofocus).getText();
+        return base.driver.findElement(textoFerramentaMicrofocus).getText();
     }
 
     public String obterTextoFerramentaTestTFS() {
-        return driver.findElement(textoFerramentaTFS).getText();
+        return base.driver.findElement(textoFerramentaTFS).getText();
     }
 
     public String obterTextoFerramentaCapybara() {
-        return driver.findElement(textoFerramentaCapybara).getText();
+        return base.driver.findElement(textoFerramentaCapybara).getText();
     }
 
     public boolean verificarImgTecnologiasTestadas() {
-        return driver.findElement(imgTecnologiasTestadas).isDisplayed();
+        return base.driver.findElement(imgTecnologiasTestadas).isDisplayed();
     }
 
     public String obterTituloTecnologiasTestadas() {
-        return driver.findElement(tituloTecnologiasTestadas).getText();
+        return base.driver.findElement(tituloTecnologiasTestadas).getText();
     }
 
     public String obterTextoTipoDeTecnologiaTestadaWeb() {
-        return driver.findElement(tipoDeTecnologiaTestadaWeb).getText();
+        return base.driver.findElement(tipoDeTecnologiaTestadaWeb).getText();
     }
 
     public String obterTextoTipoDeTecnologiaTestadaDatabase() {
-        return driver.findElement(tipoDeTecnologiaTestadaDatabase).getText();
+        return base.driver.findElement(tipoDeTecnologiaTestadaDatabase).getText();
     }
 
     public String obterTextoTipoDeTecnologiaTestadaWindowsFrom() {
-        return driver.findElement(tipoDeTecnologiaTestadaWindowsFrom).getText();
+        return base.driver.findElement(tipoDeTecnologiaTestadaWindowsFrom).getText();
     }
 
     public String obterTextoTipoDeTecnologiaTestadaWebServices() {
-        return driver.findElement(tipoDeTecnologiaTestadaWebServices).getText();
+        return base.driver.findElement(tipoDeTecnologiaTestadaWebServices).getText();
     }
 
     public String obterTituloGerenciadorAuditeste() {
-        return driver.findElement(tituloGerenciadorAuditeste).getText();
+        return base.driver.findElement(tituloGerenciadorAuditeste).getText();
     }
 
     public String obterTextoGerenciadorAuditeste() {
-        return driver.findElement(textoGerenciadorAuditeste).getText();
+        return base.driver.findElement(textoGerenciadorAuditeste).getText();
     }
 
     public boolean visualizarPrimeiraImgGerenciadorAuditeste() {
-        return driver.findElement(primeiraImgGerenciadorAuditeste).isDisplayed();
+        return base.driver.findElement(primeiraImgGerenciadorAuditeste).isDisplayed();
     }
 
     public boolean visualizarSegundaImgGerenciadorAuditeste() {
-        return driver.findElement(segundaImgGerenciadorAuditeste).isDisplayed();
+        return base.driver.findElement(segundaImgGerenciadorAuditeste).isDisplayed();
     }
 
     public String obterTituloMetodologiaTestes() {
-        return driver.findElement(tituloMetodologiaTestes).getText();
+        return base.driver.findElement(tituloMetodologiaTestes).getText();
     }
 
     public boolean visualizarImgMetodologiaTestesPlanejamento() {
-        return driver.findElement(imgMetodologiaTestesPlanejamento).isDisplayed();
+        return base.driver.findElement(imgMetodologiaTestesPlanejamento).isDisplayed();
     }
 
     public String obterPrimeiroTextoMetodologiaTestesPlanejamento() {
-        return driver.findElement(primeiroTextoMetodologiaTestesPlanejamento).getText();
+        return base.driver.findElement(primeiroTextoMetodologiaTestesPlanejamento).getText();
     }
 
     public String obterSegundoTextoMetodologiaTestesPlanejamento() {
-        return driver.findElement(segundoTextoMetodologiaTestesPlanejamento).getText();
+        return base.driver.findElement(segundoTextoMetodologiaTestesPlanejamento).getText();
     }
 
     public String obterTerceiroTextoMetodologiaTestesPlanejamento() {
-        return driver.findElement(terceiroTextoMetodologiaTestesPlanejamento).getText();
+        return base.driver.findElement(terceiroTextoMetodologiaTestesPlanejamento).getText();
     }
 
     public String obterQuartoTextoMetodologiaTestesPlanejamento() {
-        return driver.findElement(quartoTextoMetodologiaTestesPlanejamento).getText();
+        return base.driver.findElement(quartoTextoMetodologiaTestesPlanejamento).getText();
     }
 
     public String obterQuintoTextoMetodologiaTestesPlanejamento() {
-        return driver.findElement(quintoTextoMetodologiaTestesPlanejamento).getText();
+        return base.driver.findElement(quintoTextoMetodologiaTestesPlanejamento).getText();
     }
 
     public boolean visualizarImgMetodologiaTestesEspecificacao() {
-        return driver.findElement(imgMetodologiaTestesEspecificacao).isDisplayed();
+        return base.driver.findElement(imgMetodologiaTestesEspecificacao).isDisplayed();
     }
 
     public String obterPrimeiroTextoMetodologiaTestesEspecificacao() {
-        return driver.findElement(primeiroTextoMetodologiaTestesEspecificacao).getText();
+        return base.driver.findElement(primeiroTextoMetodologiaTestesEspecificacao).getText();
     }
 
     public String obterSegundoTextoMetodologiaTestesEspecificacao() {
-        return driver.findElement(segundoTextoMetodologiaTestesEspecificacao).getText();
+        return base.driver.findElement(segundoTextoMetodologiaTestesEspecificacao).getText();
     }
 
     public String obterTerceiroTextoMetodologiaTestesEspecificacao() {
-        return driver.findElement(terceiroTextoMetodologiaTestesEspecificacao).getText();
+        return base.driver.findElement(terceiroTextoMetodologiaTestesEspecificacao).getText();
     }
 
     public String obterQuartoTextoMetodologiaTestesEspecificacao() {
-        return driver.findElement(quartoTextoMetodologiaTestesEspecificacao).getText();
+        return base.driver.findElement(quartoTextoMetodologiaTestesEspecificacao).getText();
     }
 
     public boolean visualizarImgMetodologiaTestesExecucao() {
-        return driver.findElement(imgMetodologiaTestesExecucao).isDisplayed();
+        return base.driver.findElement(imgMetodologiaTestesExecucao).isDisplayed();
     }
 
     public String obterPrimeiroTextoMetodologiaTestesExecucao() {
-        return driver.findElement(primeiroTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(primeiroTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterSegundoTextoMetodologiaTestesExecucao() {
-        return driver.findElement(segundoTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(segundoTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterTerceiroTextoMetodologiaTestesExecucao() {
-        return driver.findElement(terceiroTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(terceiroTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterQuartoTextoMetodologiaTestesExecucao() {
-        return driver.findElement(quartoTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(quartoTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterQuintoTextoMetodologiaTestesExecucao() {
-        return driver.findElement(quintoTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(quintoTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterSextoTextoMetodologiaTestesExecucao() {
-        return driver.findElement(sextoTextoMetodologiaTestesExecucao).getText();
+        return base.driver.findElement(sextoTextoMetodologiaTestesExecucao).getText();
     }
 
     public String obterPrimeiroTextoMetodologiaTestes() {
-        return driver.findElement(primeiroTextoMetodologiaTestes).getText();
+        return base.driver.findElement(primeiroTextoMetodologiaTestes).getText();
     }
 
     public String obterSegundoTextoMetodologiaTestes() {
-        return driver.findElement(segundoTextoMetodologiaTestes).getText();
+        return base.driver.findElement(segundoTextoMetodologiaTestes).getText();
     }
 
     public String obterTerceiroTextoMetodologiaTestes() {
-        return driver.findElement(terceiroTextoMetodologiaTestes).getText();
+        return base.driver.findElement(terceiroTextoMetodologiaTestes).getText();
     }
 
     public String obterQuartoTextoMetodologiaTestes() {
-        return driver.findElement(quartoTextoMetodologiaTestes).getText();
+        return base.driver.findElement(quartoTextoMetodologiaTestes).getText();
     }
 
     public String obterQuintoTextoMetodologiaTestes() {
-        return driver.findElement(quintoTextoMetodologiaTestes).getText();
+        return base.driver.findElement(quintoTextoMetodologiaTestes).getText();
     }
 
     public String obterTituloCasesAuditeste() {
-        return driver.findElement(tituloCasesAuditeste).getText();
+        return base.driver.findElement(tituloCasesAuditeste).getText();
     }
 
     public String obterTextoCasesAuditeste() {
-        return driver.findElement(textoCasesAuditeste).getText();
+        return base.driver.findElement(textoCasesAuditeste).getText();
     }
 
     public String obterTituloTestesFuncionais() {
-        return driver.findElement(tituloTestesFuncionais).getText();
+        return base.driver.findElement(tituloTestesFuncionais).getText();
     }
 
     public String obterTextoTestesFuncionais() {
-        return driver.findElement(textoTestesFuncionais).getText();
+        return base.driver.findElement(textoTestesFuncionais).getText();
     }
 
     public String obterTituloTestesNaoFuncionais() {
-        return driver.findElement(tituloTestesNaoFuncionais).getText();
+        return base.driver.findElement(tituloTestesNaoFuncionais).getText();
     }
 
     public String obterTextoTestesNaoFuncionais() {
-        return driver.findElement(textoTestesNaoFuncionais).getText();
+        return base.driver.findElement(textoTestesNaoFuncionais).getText();
     }
 
     public String obterTextoTestesManuais() {
-        return driver.findElement(textoTestesManuais).getText();
+        return base.driver.findElement(textoTestesManuais).getText();
     }
 
     public String obterSegundoTextoTestesManuais() {
-        return driver.findElement(segundoTextoTestesManuais).getText();
+        return base.driver.findElement(segundoTextoTestesManuais).getText();
     }
 
     public String obterTextoTestesMobile() {
-        return driver.findElement(textoTestesMobile).getText();
+        return base.driver.findElement(textoTestesMobile).getText();
     }
 
     public String obterTituloTestesMobile() {
-        return driver.findElement(tituloTestesMobile).getText();
+        return base.driver.findElement(tituloTestesMobile).getText();
     }
 
     public String obterPrimeiroTextoTestesMobile() {
-        return driver.findElement(primeiroTextoTestesMobile).getText();
+        return base.driver.findElement(primeiroTextoTestesMobile).getText();
     }
 
     public String obterSegundoTextoTestesMobile() {
-        return driver.findElement(segundoTextoTestesMobile).getText();
+        return base.driver.findElement(segundoTextoTestesMobile).getText();
     }
 
     public String obterTituloTestesFabricaTestes() {
-        return driver.findElement(tituloTestesFabricaTestes).getText();
+        return base.driver.findElement(tituloTestesFabricaTestes).getText();
     }
 
     public String obterPrimeiroTextoFabricaTestes() {
-        return driver.findElement(primeiroTextoFabricaTestes).getText();
+        return base.driver.findElement(primeiroTextoFabricaTestes).getText();
     }
 
     public String obterSegundoTextoFabricaTestes() {
-        return driver.findElement(segundoTextoFabricaTestes).getText();
+        return base.driver.findElement(segundoTextoFabricaTestes).getText();
     }
 
     public String obterTerceiroTextoFabricaTestes() {
-        return driver.findElement(terceiroTextoFabricaTestes).getText();
+        return base.driver.findElement(terceiroTextoFabricaTestes).getText();
     }
 
     public String obterPrimeiroTextoConsultoria() {
-        return driver.findElement(primeiroTextoConsultoria).getText();
+        return base.driver.findElement(primeiroTextoConsultoria).getText();
     }
 
     public String obterSegundoTextoConsultoria() {
-        return driver.findElement(segundoTextoConsultoria).getText();
+        return base.driver.findElement(segundoTextoConsultoria).getText();
     }
 
     public String obterTextoBotaoAcesseJaCrowdsourced() {
-        return driver.findElement(botaoAcesseJaCrowdsourced).getText();
+        return base.driver.findElement(botaoAcesseJaCrowdsourced).getText();
     }
 
     public String obterTextoBotaoCadastreSeCrowdsourced() {
-        return driver.findElement(botaoCadastreSeCrowdsourced).getText();
+        return base.driver.findElement(botaoCadastreSeCrowdsourced).getText();
     }
 
     public String obterPrimeiroTextoCrowdsourced() {
-        return driver.findElement(primeiroTextoCrowdsourced).getText();
+        return base.driver.findElement(primeiroTextoCrowdsourced).getText();
     }
 
     public String obterSegundoTextoCrowdsourced() {
-        return driver.findElement(segundoTextoCrowdsourced).getText();
+        return base.driver.findElement(segundoTextoCrowdsourced).getText();
     }
 
     public String obterTerceiroTextoCrowdsourced() {
-        return driver.findElement(terceiroTextoCrowdsourced).getText();
+        return base.driver.findElement(terceiroTextoCrowdsourced).getText();
     }
 
     public String obterQuartoTextoCrowdsourced() {
-        return driver.findElement(quartoTextoCrowdsourced).getText();
+        return base.driver.findElement(quartoTextoCrowdsourced).getText();
     }
 
     public String obterTituloCrowdsourced() {
-        return driver.findElement(tituloCrowdsourced).getText();
+        return base.driver.findElement(tituloCrowdsourced).getText();
     }
 
     public String obterQuintoTextoCrowdsourced() {
-        return driver.findElement(quintoTextoCrowdsourced).getText();
+        return base.driver.findElement(quintoTextoCrowdsourced).getText();
     }
 
     public String obterSextoTextoCrowdsourced() {
-        return driver.findElement(sextoTextoCrowdsourced).getText();
+        return base.driver.findElement(sextoTextoCrowdsourced).getText();
     }
 
     public String obterSetimoTextoCrowdsourced() {
-        return driver.findElement(setimoTextoCrowdsourced).getText();
+        return base.driver.findElement(setimoTextoCrowdsourced).getText();
     }
 
     public String obterPrimeiroTextoAlocacaoProfissionais() {
-        return driver.findElement(primeiroTextoAlocacaoProfissionais).getText();
+        return base.driver.findElement(primeiroTextoAlocacaoProfissionais).getText();
     }
 
     public String obterTituloBeneficioAlocacaoProfissionais() {
-        return driver.findElement(tituloBeneficioAlocacaoProfissionais).getText();
+        return base.driver.findElement(tituloBeneficioAlocacaoProfissionais).getText();
     }
 
     public String obterTextoPrimeiroBeneficioAlocacaoProfissionais() {
-        return driver.findElement(textoPrimeiroBeneficioAlocacaoProfissionais).getText();
+        return base.driver.findElement(textoPrimeiroBeneficioAlocacaoProfissionais).getText();
     }
 
     public String obterTextoSegundoBeneficioAlocacaoProfissionais() {
-        return driver.findElement(textoSegundoBeneficioAlocacaoProfissionais).getText();
+        return base.driver.findElement(textoSegundoBeneficioAlocacaoProfissionais).getText();
     }
 
     public String obterTextoTerceiroBeneficioAlocacaoProfissionais() {
-        return driver.findElement(textoTerceiroBeneficioAlocacaoProfissionais).getText();
+        return base.driver.findElement(textoTerceiroBeneficioAlocacaoProfissionais).getText();
     }
 
     public String obterPrimeiroTextoAutomacaoProcessos() {
-        return driver.findElement(primeiroTextoAutomacaoProcessos).getText();
+        return base.driver.findElement(primeiroTextoAutomacaoProcessos).getText();
     }
 
     public String obterSegundoTextoAutomacaoProcessos() {
-        return driver.findElement(segundoTextoAutomacaoProcessos).getText();
+        return base.driver.findElement(segundoTextoAutomacaoProcessos).getText();
     }
 
     public String obterTerceiroTextoAutomacaoProcessos() {
-        return driver.findElement(terceiroTextoAutomacaoProcessos).getText();
+        return base.driver.findElement(terceiroTextoAutomacaoProcessos).getText();
     }
 
 }

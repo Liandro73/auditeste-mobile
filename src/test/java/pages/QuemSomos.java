@@ -1,11 +1,11 @@
 package pages;
 
+import common.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class QuemSomos {
+public class QuemSomos extends Base {
 
-    private WebDriver driver;
+    private Base base;
 
     //Itens Menu Hamburger
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
@@ -51,156 +51,156 @@ public class QuemSomos {
     private By tituloCasesAuditeste = By.cssSelector("div.vc_row.wpb_row.vc_row-fluid.vc_custom_1507644726866 > div > div > div > div > h2 > b");
     private By textoCasesAuditeste = By.cssSelector("div.vc_row.wpb_row.vc_row-fluid.vc_custom_1507644726866 > div > div > div > div > div > div > p");
 
-    public QuemSomos(WebDriver driver) {
-        this.driver = driver;
+    public QuemSomos(Base base) {
+        this.base = base;
     }
 
     public void clicarBotaoMenuHamburger() {
-        driver.findElement(botaoMenu).click();
+        base.driver.findElement(botaoMenu).click();
     }
 
     public void clicarMenuItemQuemSomos() {
-        driver.findElement(botaoMenuQuemSomos).click();
+        base.driver.findElement(botaoMenuQuemSomos).click();
     }
 
     public String verificarSeEstaNaPaginaQuemSomos() {
-        return driver.findElement(tituloPagina).getText();
+        return base.driver.findElement(tituloPagina).getText();
     }
 
     public String obterTituloBugMilenio() {
-        return driver.findElement(tituloBugMilenio).getText();
+        return base.driver.findElement(tituloBugMilenio).getText();
     }
 
     public String obterTexto1BugMilenio() {
-        return driver.findElement(texto1BugMilenio).getText();
+        return base.driver.findElement(texto1BugMilenio).getText();
     }
 
     public String obterTexto2BugMilenio() {
-        return driver.findElement(texto2BugMilenio).getText();
+        return base.driver.findElement(texto2BugMilenio).getText();
     }
 
     public String obterTexto3BugMilenio() {
-        return driver.findElement(texto3BugMilenio).getText();
+        return base.driver.findElement(texto3BugMilenio).getText();
     }
 
     public String obterTituloBumTestesSoftware() {
-        return driver.findElement(tituloBumTestesSoftware).getText();
+        return base.driver.findElement(tituloBumTestesSoftware).getText();
     }
 
     public String obterTexto1BumTestesSoftware() {
-        return driver.findElement(texto1BumTestesSoftware).getText();
+        return base.driver.findElement(texto1BumTestesSoftware).getText();
     }
 
     public String obterTexto2BumTestesSoftware() {
-        return driver.findElement(texto2BumTestesSoftware).getText();
+        return base.driver.findElement(texto2BumTestesSoftware).getText();
     }
 
     public String obterTexto3BumTestesSoftware() {
-        return driver.findElement(texto3BumTestesSoftware).getText();
+        return base.driver.findElement(texto3BumTestesSoftware).getText();
     }
 
     public String obterTextoSobreAuditeste() {
-        return driver.findElement(tituloSobreAuditeste).getText();
+        return base.driver.findElement(tituloSobreAuditeste).getText();
     }
 
     public String obterTexto1SobreAuditeste() {
-        return driver.findElement(texto1SobreAuditeste).getText();
+        return base.driver.findElement(texto1SobreAuditeste).getText();
     }
 
     public String obterTexto2SobreAuditeste() {
-        return driver.findElement(texto2SobreAuditeste).getText();
+        return base.driver.findElement(texto2SobreAuditeste).getText();
     }
 
     public String obterTexto3SobreAuditeste() {
-        return driver.findElement(texto3SobreAuditeste).getText();
+        return base.driver.findElement(texto3SobreAuditeste).getText();
     }
 
     public String obterTexto4SobreAuditeste() {
-        return driver.findElement(texto4SobreAuditeste).getText();
+        return base.driver.findElement(texto4SobreAuditeste).getText();
     }
 
     public boolean imgTituloMissaoAuditesteEstavisivel() {
-        return driver.findElement(imgTituloMissaoAuditeste).isDisplayed();
+        return base.driver.findElement(imgTituloMissaoAuditeste).isDisplayed();
     }
 
     public String obterTextoMissaoAuditeste() {
-        return driver.findElement(textoMissaoAuditeste).getText();
+        return base.driver.findElement(textoMissaoAuditeste).getText();
     }
 
     public boolean imgTituloVisaoAuditesteEstavisivel() {
-        return driver.findElement(imgTituloVisaoAuditeste).isDisplayed();
+        return base.driver.findElement(imgTituloVisaoAuditeste).isDisplayed();
     }
 
     public String obterTextoVisaoAuditeste() {
-        return driver.findElement(textoVisaoAuditeste).getText();
+        return base.driver.findElement(textoVisaoAuditeste).getText();
     }
 
     public boolean imgTituloValoresAuditesteEstavisivel() {
-        return driver.findElement(imgTituloValoresAuditeste).isDisplayed();
+        return base.driver.findElement(imgTituloValoresAuditeste).isDisplayed();
     }
 
     public String obterTextoValoresAuditesteEtica() {
-        return driver.findElement(textoValoresAuditesteEtica).getText();
+        return base.driver.findElement(textoValoresAuditesteEtica).getText();
     }
 
     public String obterTextoValoresAuditesteAgilidade() {
-        return driver.findElement(textoValoresAuditesteAgilidade).getText();
+        return base.driver.findElement(textoValoresAuditesteAgilidade).getText();
     }
 
     public String obterTextoValoresAuditesteComprometimento() {
-        return driver.findElement(textoValoresAuditesteComprometimento).getText();
+        return base.driver.findElement(textoValoresAuditesteComprometimento).getText();
     }
 
     public String obterTextoValoresAuditesteRespeito() {
-        return driver.findElement(textoValoresAuditesteRespeito).getText();
+        return base.driver.findElement(textoValoresAuditesteRespeito).getText();
     }
 
     public String obterTextoValoresAuditesteQualidade() {
-        return driver.findElement(textoValoresAuditesteQualidade).getText();
+        return base.driver.findElement(textoValoresAuditesteQualidade).getText();
     }
 
     public String obterTituloServicos() {
-        return driver.findElement(tituloServicos).getText();
+        return base.driver.findElement(tituloServicos).getText();
     }
 
     public String obterTextoServicos() {
-        return driver.findElement(textoServicos).getText();
+        return base.driver.findElement(textoServicos).getText();
     }
 
     public String obterTextoServicosTestesAutomatizados() {
-        return driver.findElement(testesAutomatizados).getText();
+        return base.driver.findElement(testesAutomatizados).getText();
     }
 
     public String obterTextoServicosFabricaTestes() {
-        return driver.findElement(fabricaTestes).getText();
+        return base.driver.findElement(fabricaTestes).getText();
     }
 
     public String obterTextoServicosTestesManuais() {
-        return driver.findElement(testesManuais).getText();
+        return base.driver.findElement(testesManuais).getText();
     }
 
     public String obterTextoServicosConsultoriaTestes() {
-        return driver.findElement(consultoriaTestes).getText();
+        return base.driver.findElement(consultoriaTestes).getText();
     }
 
     public String obterTextoServicosTestesMobile() {
-        return driver.findElement(testesMobile).getText();
+        return base.driver.findElement(testesMobile).getText();
     }
 
     public String obterTextoServicosTestesFuncionaisENaoFuncionais() {
-        return driver.findElement(testesFuncionaisENaoFuncionais).getText();
+        return base.driver.findElement(testesFuncionaisENaoFuncionais).getText();
     }
 
     public String obterTextoServicosAlocacaoProfissionaisEspecializados() {
-        return driver.findElement(alocacaoProfissionaisEspecializados).getText();
+        return base.driver.findElement(alocacaoProfissionaisEspecializados).getText();
     }
 
     public String obterTituloCasesAuditeste() {
-        return driver.findElement(tituloCasesAuditeste).getText();
+        return base.driver.findElement(tituloCasesAuditeste).getText();
     }
 
     public String obterTextoCasesAuditeste() {
-        return driver.findElement(textoCasesAuditeste).getText();
+        return base.driver.findElement(textoCasesAuditeste).getText();
     }
 
 }

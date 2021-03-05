@@ -1,11 +1,11 @@
 package pages;
 
+import common.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class PaginaInicial {
+public class PaginaInicial extends Base {
 
-    private WebDriver driver;
+    private Base base;
 
     //Itens Menu Hamburguer
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
@@ -64,128 +64,128 @@ public class PaginaInicial {
     private By iconeAbrirChatBot = By.xpath("//*[@id=\"blip-chat-icon\"]");
     private By iconeFecharChatBot = By.xpath("//*[@id=\"path-1\"]");
 
-    public PaginaInicial(WebDriver driver) {
-        this.driver = driver;
+    public PaginaInicial(Base base) {
+        this.base = base;
     }
 
     public String obterTituloPagina() {
-        return driver.getTitle().toUpperCase();
+        return base.driver.getTitle().toUpperCase();
     }
 
     public boolean visualizarPopupHomeOffice() {
-        return driver.findElement(popupHomeOffice).isDisplayed();
+        return base.driver.findElement(popupHomeOffice).isDisplayed();
     }
 
     public void clicarBotaoFecharPopupHomeOffice() {
-        driver.findElement(botaoFecharPopupHomeOffice).click();
+        base.driver.findElement(botaoFecharPopupHomeOffice).click();
     }
 
     public String obterTituloContainerCimaHome() {
-        return driver.findElement(tituloContainerSolidezDeMercado).getText();
+        return base.driver.findElement(tituloContainerSolidezDeMercado).getText();
     }
 
     public String obterTextoContainerCimaHome() {
-        return driver.findElement(textoContainerSolidezDeMercado).getText();
+        return base.driver.findElement(textoContainerSolidezDeMercado).getText();
     }
 
     public String obterTituloContainerBaixoHome() {
-        return driver.findElement(tituloContainerTecnologia).getText();
+        return base.driver.findElement(tituloContainerTecnologia).getText();
     }
 
     public String obterTextoContainerBaixoHome() {
-        return driver.findElement(textoContainerTecnologia).getText();
+        return base.driver.findElement(textoContainerTecnologia).getText();
     }
 
     public String obterTituloContainerCentralHome() {
-        return driver.findElement(tituloContainerResultado).getText();
+        return base.driver.findElement(tituloContainerResultado).getText();
     }
 
     public String obterTextoContainerCentralHome() {
-        return driver.findElement(textoContainerResultado).getText();
+        return base.driver.findElement(textoContainerResultado).getText();
     }
 
     public String obterTituloCasesHome() {
-        return driver.findElement(tituloCasesHome).getText();
+        return base.driver.findElement(tituloCasesHome).getText();
     }
 
     public String obterSubtituloCasesHome() {
-        return driver.findElement(subtituloCasesHome).getText();
+        return base.driver.findElement(subtituloCasesHome).getText();
     }
 
     public void clicarSeletorPrimeiroDepoimentoCases() {
-        driver.findElement(seletorPrimeiroDepoimento).click();
+        base.driver.findElement(seletorPrimeiroDepoimento).click();
     }
 
     public void clicarSeletorSegundoDepoimentoCases() {
-        driver.findElement(seletorSegundoDepoimento).click();
+        base.driver.findElement(seletorSegundoDepoimento).click();
     }
 
     public String obterTextoPrimeiroDepoimentoCasesHome() {
-        return driver.findElement(primeiroDepoimentoCasesHome).getText();
+        return base.driver.findElement(primeiroDepoimentoCasesHome).getText();
     }
 
     public String obterNomeClientePrimeiroDepoimentoCasesHome() {
-        return driver.findElement(clientePrimeiroDepoimentoCasesHome).getText();
+        return base.driver.findElement(clientePrimeiroDepoimentoCasesHome).getText();
     }
 
     public String obterCargoEmpresaClientePrimeiroDepoimentoCasesHome() {
-        return driver.findElement(cargoEmpresaClientePrimeiroDepoimentoCasesHome).getText();
+        return base.driver.findElement(cargoEmpresaClientePrimeiroDepoimentoCasesHome).getText();
     }
 
     public String obterTextoSegundoDepoimentoCasesHome() {
-        return driver.findElement(segundoDepoimentoCasesHome).getText();
+        return base.driver.findElement(segundoDepoimentoCasesHome).getText();
     }
 
     public String obterNomeClienteSegundoDepoimentoCasesHome() {
-        return driver.findElement(clienteSegundoDepoimentoCasesHome).getText();
+        return base.driver.findElement(clienteSegundoDepoimentoCasesHome).getText();
     }
 
     public String obterCargoEmpresaClienteSegundoDepoimentoCasesHome() {
-        return driver.findElement(cargoEmpresaClienteSegundoDepoimentoCasesHome).getText();
+        return base.driver.findElement(cargoEmpresaClienteSegundoDepoimentoCasesHome).getText();
     }
 
     public String obterTextoTestesAutomatizados() {
-        return driver.findElement(testesAutomatizados).getText();
+        return base.driver.findElement(testesAutomatizados).getText();
     }
 
     public String obterTextoFabricaTestes() {
-        return driver.findElement(fabricaTestes).getText();
+        return base.driver.findElement(fabricaTestes).getText();
     }
 
     public String obterTextoCrowdsourcedAuditeste() {
-        return driver.findElement(crowdsourcedAuditeste).getText();
+        return base.driver.findElement(crowdsourcedAuditeste).getText();
     }
 
     public String obterTextoTestesManuais() {
-        return driver.findElement(testesManuais).getText();
+        return base.driver.findElement(testesManuais).getText();
     }
 
     public String obterTextoConsultoriaTestes() {
-        return driver.findElement(consultoriaTestes).getText();
+        return base.driver.findElement(consultoriaTestes).getText();
     }
 
     public String obterTextoTestesMobile() {
-        return driver.findElement(testesMobile).getText();
+        return base.driver.findElement(testesMobile).getText();
     }
 
     public String obterTextoTestesFuncionaisENaoFuncionais() {
-        return driver.findElement(testesFuncionaisENaoFuncionais).getText();
+        return base.driver.findElement(testesFuncionaisENaoFuncionais).getText();
     }
 
     public String obterTextoAlocacaoProfissionaisEspecializados() {
-        return driver.findElement(alocacaoProfissionaisEspecializados).getText();
+        return base.driver.findElement(alocacaoProfissionaisEspecializados).getText();
     }
 
     public String obterTextoAutomacaoDeProcessos() {
-        return driver.findElement(automacaoDeProcessos).getText();
+        return base.driver.findElement(automacaoDeProcessos).getText();
     }
 
     public void clicarBotaoIniciarChatBot() {
-        driver.findElement(iconeAbrirChatBot).click();
+        base.driver.findElement(iconeAbrirChatBot).click();
     }
 
     public void clicarBotaoFecharChatBot() {
-        driver.findElement(iconeFecharChatBot).click();
+        base.driver.findElement(iconeFecharChatBot).click();
     }
 
 }

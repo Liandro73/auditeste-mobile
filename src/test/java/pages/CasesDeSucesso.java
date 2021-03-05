@@ -1,11 +1,11 @@
 package pages;
 
+import common.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class CasesDeSucesso {
+public class CasesDeSucesso extends Base {
 
-    private WebDriver driver;
+    private Base base;
 
     //Itens Menu Hamburguer
     private By botaoMenu = By.xpath("//button[contains(@class, 'navbar-toggle')]");
@@ -29,76 +29,76 @@ public class CasesDeSucesso {
     private By clienteSegundoDepoimentoCasesHome = By.xpath("//*[@id=\"1506917889386-f7b40e2b-efd3\"]/div/div/div/p[2]/span[1]");
     private By cargoEmpresaClienteSegundoDepoimentoCases = By.xpath("//*[@id=\"1506917889386-f7b40e2b-efd3\"]/div/div/div/p[2]/span[2]");
 
-    public CasesDeSucesso(WebDriver driver) {
-        this.driver = driver;
+    public CasesDeSucesso(Base base) {
+        this.base = base;
     }
 
     public void clicarBotaoMenuHamburger() {
-        driver.findElement(botaoMenu).click();
+        base.driver.findElement(botaoMenu).click();
     }
 
     public void clicarMenuItemCasesDeSucesso() {
-        driver.findElement(botaoMenuCasesDeSucesso).click();
+        base.driver.findElement(botaoMenuCasesDeSucesso).click();
     }
 
     public String verificarSeEstaNaPaginaCasesDeSucesso() {
-        return driver.findElement(tituloPaginaCasesDeSucesso).getText();
+        return base.driver.findElement(tituloPaginaCasesDeSucesso).getText();
     }
 
     public String obterTituloPaginaCasesDeSucessoAuditeste() {
-        return driver.findElement(tituloPaginaCasesDeSucessoAuditeste).getText();
+        return base.driver.findElement(tituloPaginaCasesDeSucessoAuditeste).getText();
     }
 
     public String obterTextoPaginaCasesDeSucesso() {
-        return driver.findElement(textoPaginaCasesDeSucesso).getText();
+        return base.driver.findElement(textoPaginaCasesDeSucesso).getText();
     }
 
     public boolean verificarImgPaginaCasesDeSucessoEstaVisivel() {
-        return driver.findElement(imgPaginaCasesDeSucesso).isDisplayed();
+        return base.driver.findElement(imgPaginaCasesDeSucesso).isDisplayed();
     }
 
     public String obterLegendaImgPaginaCasesDeSucesso() {
-        return driver.findElement(legendaImgPaginaCasesDeSucesso).getText();
+        return base.driver.findElement(legendaImgPaginaCasesDeSucesso).getText();
     }
 
     public String obterTituloVideoPaginaCasesDeSucesso() {
-        return driver.findElement(tituloVideoPaginaCasesDeSucesso).getText();
+        return base.driver.findElement(tituloVideoPaginaCasesDeSucesso).getText();
     }
 
     public boolean verificarVideoPaginaCasesDeSucessoEstaVisivel() {
-        return driver.findElement(videoPaginaCasesDeSucesso).isDisplayed();
+        return base.driver.findElement(videoPaginaCasesDeSucesso).isDisplayed();
     }
 
     public void clicarSeletorPrimeiroDepoimentoCases() {
-        driver.findElement(seletorPrimeiroDepoimento).click();
+        base.driver.findElement(seletorPrimeiroDepoimento).click();
     }
 
     public void clicarSeletorSegundoDepoimentoCases() {
-        driver.findElement(seletorSegundoDepoimento).click();
+        base.driver.findElement(seletorSegundoDepoimento).click();
     }
 
     public String obterTextoPrimeiroDepoimentoCases() {
-        return driver.findElement(primeiroDepoimentoCases).getText();
+        return base.driver.findElement(primeiroDepoimentoCases).getText();
     }
 
     public String obterNomeClientePrimeiroDepoimentoCases() {
-        return driver.findElement(clientePrimeiroDepoimentoCases).getText();
+        return base.driver.findElement(clientePrimeiroDepoimentoCases).getText();
     }
 
     public String obterCargoEmpresaClientePrimeiroDepoimentoCases() {
-        return driver.findElement(cargoEmpresaClientePrimeiroDepoimentoCases).getText();
+        return base.driver.findElement(cargoEmpresaClientePrimeiroDepoimentoCases).getText();
     }
 
     public String obterTextoSegundoDepoimentoCases() {
-        return driver.findElement(segundoDepoimentoCasesHome).getText();
+        return base.driver.findElement(segundoDepoimentoCasesHome).getText();
     }
 
     public String obterNomeClienteSegundoDepoimentoCases() {
-        return driver.findElement(clienteSegundoDepoimentoCasesHome).getText();
+        return base.driver.findElement(clienteSegundoDepoimentoCasesHome).getText();
     }
 
     public String obterCargoEmpresaClienteSegundoDepoimentoCases() {
-        return driver.findElement(cargoEmpresaClienteSegundoDepoimentoCases).getText();
+        return base.driver.findElement(cargoEmpresaClienteSegundoDepoimentoCases).getText();
     }
 
 }

@@ -1,59 +1,40 @@
 package steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import common.Base;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.PaginaInicial;
 import pages.Rodape;
 import util.Screenshot;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AcessaPaginaInicialSteps{
+public class AcessaPaginaInicialSteps extends Base {
 
-    private static WebDriver driver;
+    private Base base;
+    private PaginaInicial homePage;
+    private Rodape rodape;
+    private Screenshot screenshot;
 
-    static DesiredCapabilities capabilities = new DesiredCapabilities();
-
-    private PaginaInicial homePage = new PaginaInicial(driver);
-    private Rodape rodape = new Rodape(driver);
-    private Screenshot screenshot = new Screenshot(driver);
+    public AcessaPaginaInicialSteps(Base base) {
+        this.base = base;
+        homePage = new PaginaInicial(this.base);
+        rodape = new Rodape(this.base);
+        screenshot = new Screenshot(this.base);
+    }
 
     private String tituloPagina = "AUDITESTE - ESPECIALISTAS EM QUALIDADE DE SOFTWARE";
     private String telefoneHome = "+55 11 3236-6600";
 
-    @Before
-    public static void inicializar() throws MalformedURLException {
-        capabilities.setCapability("deviceName", "Emulator");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-        capabilities.setCapability(CapabilityType.VERSION, "10.0");
-
-        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    }
-
-    @After
-    public static void finalizar() {
-        driver.quit();
-    }
-
     @Dado("que estou na pagina inicial")
     public void que_estou_na_pagina_inicial() {
-        driver.get("https://auditeste.com.br/");
-        homePage.visualizarPopupHomeOffice();
-        homePage.clicarBotaoFecharPopupHomeOffice();
+        if (homePage.visualizarPopupHomeOffice() == true) {
+            assertEquals(homePage.visualizarPopupHomeOffice(), true);
+            homePage.clicarBotaoFecharPopupHomeOffice();
+        }
         assertEquals(homePage.obterTituloPagina(), (tituloPagina));
         try {
             screenshot.capturarScreenshot("dado_que_estou_na_pagina_inicial");
